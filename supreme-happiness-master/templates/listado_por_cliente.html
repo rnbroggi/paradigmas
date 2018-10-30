@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Clientes{% endblock %}
+
+{% block page_content %}
+
+<div>
+  {{ wtf.quick_form(form) }}
+</div>
+
+
+{% for cliente in clientes %}
+  <a href="compras-del-cliente/{{cliente}}"><h4>{{ cliente }}</h4></a>
+{% endfor %}
+
+{% endblock %}

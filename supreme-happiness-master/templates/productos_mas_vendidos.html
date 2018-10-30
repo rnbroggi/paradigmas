@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Mas vendidos{% endblock %}
+
+{% block page_content %}
+
+<h1>Estos son los productos mas vendidos</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>PRODUCTO</th>
+    <th>CANTIDAD</th>
+  </tr>
+
+{% for producto, cantidad in mas_comprados %}
+  <tr>
+    <td>{{ producto }}</td>
+    <td>{{ cantidad }}</td>
+  </tr>
+{% endfor %}
+
+</table>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Mostrar tabla completa
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <table class="table table-bordered">
+      <tr>
+        <th>PRODUCTO</th>
+        <th>CANTIDAD</th>
+      </tr>
+
+      {% for producto, cantidad in productos.items() %}
+      <tr>
+        <td>{{ producto }}</td>
+        <td>{{ cantidad }}</td>
+      </tr>
+
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

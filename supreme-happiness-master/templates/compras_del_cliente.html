@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Compras{% endblock %}
+
+{% block page_content %}
+<h3>El cliente {{ cliente }} compro los siguientes productos:</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>CODIGO</th>
+    <th>PRODUCTO</th>
+    <th>CLIENTE</th>
+    <th>CANTIDAD</th>
+    <th>PRECIO</th>
+  </tr>
+
+  {% for compra in productos %}
+  <tr>
+    <td>{{ compra[0] }}</td>
+    <td>{{ compra[1] }}</td>
+    <td>{{ compra[2] }}</td>
+    <td>{{ compra[3] }}</td>
+    <td>$ {{ compra[4] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

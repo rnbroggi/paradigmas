@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Mejores clientes{% endblock %}
+
+{% block page_content %}
+
+<h1>Estos son los clientes que mas plata gastaron</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>CLIENTE</th>
+    <th>PLATA GASTADA</th>
+  </tr>
+
+{% for cliente, dinero in mejores_compradores %}
+  <tr>
+    <td>{{ cliente }}</td>
+    <td>$ {{ dinero }}</td>
+  </tr>
+{% endfor %}
+
+</table>
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Mostrar tabla completa
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    <table class="table table-bordered">
+      <tr>
+        <th>CLIENTE</th>
+        <th>PLATA GASTADA</th>
+      </tr>
+
+      {% for cliente, dinero in compradores.items() %}
+      <tr>
+        <td>{{ cliente }}</td>
+        <td>$ {{ dinero }}</td>
+      </tr>
+
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

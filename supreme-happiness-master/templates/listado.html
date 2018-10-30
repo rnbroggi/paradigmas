@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Listado{% endblock %}
+
+{% block page_content %}
+
+<h2>Hola {{ username }}!</h2>
+<hr>
+<h3>Realizar consultas:</h3>
+  <ul>
+    <a href="/listado-por-cliente"><li>Compras por cliente</li></a>
+    <a href="/listado-por-producto"><li>Compras por producto</li></a>
+    <a href="/productos-mas-vendidos"><li>Productos mas vendidos</li></a>
+    <a href="/mejores-clientes"><li>Clientes que mas plata gastaron</li></a>
+  </ul>
+
+<hr>
+
+<h3>Ultimas compras</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>CODIGO</th>
+    <th>PRODUCTO</th>
+    <th>CLIENTE</th>
+    <th>CANTIDAD</th>
+    <th>PRECIO</th>
+  </tr>
+
+  {% for compra in listado %}
+  <tr>
+    <td>{{ compra[0] }}</td>
+    <td>{{ compra[1] }}</td>
+    <td>{{ compra[2] }}</td>
+    <td>{{ compra[3] }}</td>
+    <td>$ {{ compra[4] }}</td>
+  </tr>
+
+  {% endfor %}
+</table>
+
+{% endblock %}
