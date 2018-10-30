@@ -1,1 +1,7 @@
 # supreme-happiness
+
+El funcionamiento del programa parte de la base de un archivo CSV que será necesario para correr la mayoría de las funciones y generar los listados a mostrar en la página. Si el programa detecta algún error procesando el CSV, la página lanzará un error 500 y se informará del error en la consola.
+
+Los datos del CSV se extraen en forma de lista. Cada línea del archivo es una lista donde cada campo es un elemento de la misma, y a su vez la línea forma parte de una lista de líneas. De esta manera la iteración de los campos se simplifica y a través de los index y creación de diccionarios a partir de ellos, se manipulan los datos del CSV para procesarlos y mostrar la información deseada.
+
+Dentro de la página se puede acceder de manera sencilla y rápida a la información que queramos visualizar, ya que hay links en la barra de navegación y en el listado principal que nos envía a donde necesitemos. Para poder acceder a la mayoria de ellos se requiere que el usuario esté logeado en el sitio. En caso de no estarlo y querer ver las páginas bloqueadas, se lo redireccionará a la sección de logeo donde ingresará su nombre de usuario y contraseña. Si aún no posee una cuenta, puede registrarse a través del botón de "Registrarse" y su información se guardará dentro de un archivo en el servidor. En caso de no querer estar más logeado, se puede salir a traves del botón de "Cerrar sesión".
